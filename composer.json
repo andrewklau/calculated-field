@@ -1,5 +1,5 @@
 {
-    "name": "codebykyle/calculated-field",
+    "name": "andrewklau/calculated-field",
     "description": "A server side calculated field for Laravel Nova",
     "keywords": [
         "laravel",
