@@ -1,17 +1,17 @@
 <template>
   <default-field :field="field" :errors="errors">
     <template slot="field">
-      <input
-        :id="field.attribute"
-        :type="this.field.type"
-        class="w-full form-control form-input form-input-bordered"
-        :class="errorClasses"
-        :placeholder="field.name"
-        :value="value | moneyFormat(field.numberFormat)"
-        @input="setFieldAndMessage"
-        :min="field.min"
-        :max="field.max"
-      />
+      <div :class="'format-'+this.field.type">
+        <input
+          :id="field.name"
+          :type="this.field.type === 'euro' ? 'number' :  this.field.type"
+          class="w-full form-control form-input form-input-bordered broadcaster"
+          :class="errorClasses"
+          :placeholder="field.name"
+          :value="value | moneyFormat(field.numberFormat)"
+          @input="setFieldAndMessage"
+        />
+      </div>
     </template>
   </default-field>
 </template>
